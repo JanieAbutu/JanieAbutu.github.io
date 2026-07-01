@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI SOC Pipeline</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
 
+<body>
+
+<h1>AI-Augmented SOC Alert Triage Pipeline</h1>
+
+<h2>Problem</h2>
+<p>
+SOC environments generate high-volume alerts with inconsistent triage quality and heavy manual effort.
+</p>
+
+<h2>What I Built</h2>
+<p>
+An automated SOC triage pipeline that ingests alerts via webhook, enriches them with threat intelligence,
+maps activity to MITRE ATT&CK, and applies AI-assisted severity scoring for prioritization.
+</p>
+
+<h2>Detection Logic</h2>
+<ul>
+  <li>IOC enrichment (VirusTotal API)</li>
+  <li>ATT&CK mapping for classification</li>
+  <li>Rule-based + AI hybrid scoring</li>
+</ul>
+
+<h2>Impact</h2>
+<ul>
+  <li>Improved consistency of alert triage</li>
+  <li>Reduced manual investigation effort</li>
+  <li>Standardized incident prioritization logic</li>
+</ul>
+
+<h2>Stack</h2>
+<p>Python, n8n, PostgreSQL, Ollama, VirusTotal API</p>
+
+</body>
+</html>
