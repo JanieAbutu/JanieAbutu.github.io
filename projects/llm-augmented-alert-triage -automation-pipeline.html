@@ -174,7 +174,7 @@
       </p>
 
       <p class="highlight">
-        The goal was to design an explainable AI-assisted SOC pipeline
+        The goal was to design an AI-assisted SOC pipeline
         where security decisions remain deterministic and auditable.
       </p>
 
@@ -252,6 +252,12 @@
         <div class="arrow">→</div>
 
         <div class="flow-box">
+          Data Aggregation/Orchestration Layer
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
           PostgreSQL Incident Storage
         </div>
 
@@ -295,7 +301,12 @@
         </li>
 
         <li>
-          Final incident objects are aggregated and stored in PostgreSQL for auditing and future analysis.
+          A final data aggregation layer merges raw alerts, VirusTotal enrichment, rule-based severity decisions, MITRE ATT&CK mappings, and AI-generated contextual analysis into a single structured SOC incident object before storage.
+        </li>
+
+
+        <li>
+          Final incident objects are stored in PostgreSQL for auditing and future reference.
         </li>
 
       </ol>
