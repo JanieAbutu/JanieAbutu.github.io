@@ -260,3 +260,47 @@ footer {
   font-size: 14px;
   opacity: 0.8;
 }
+
+/* =========================
+   HERO CTA BUTTONS (MISSING PIECE)
+========================= */
+
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #38bdf8;
+  color: #0b1220;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #7dd3fc;
+  transform: translateY(-2px);
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background: rgba(56, 189, 248, 0.12);
+  transform: translateY(-2px);
+}
