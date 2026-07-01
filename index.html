@@ -116,7 +116,7 @@ async function loadRepos(){
     container.innerHTML = "";
 
     repos
-      .filter(r => !r.fork)
+      .filter(r => !r.fork && r.name !== "JanieAbutu.github.io")
       .sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at))
       .slice(0,6)
       .forEach(repo => {
