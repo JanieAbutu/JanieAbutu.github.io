@@ -1,0 +1,396 @@
+```html id="h2x8qp"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LLM-Augmented SOC Automation Pipeline</title>
+
+  <style>
+
+    body{
+      margin:0;
+      background:#0b1220;
+      color:#e2e8f0;
+      font-family:Inter,Arial,sans-serif;
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1050px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .hero{
+      margin-bottom:50px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.1);
+      color:#38bdf8;
+      font-size:12px;
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+      background:linear-gradient(90deg,#38bdf8,#a78bfa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    h2{
+      margin-top:50px;
+      color:#38bdf8;
+      border-left:3px solid #38bdf8;
+      padding-left:12px;
+    }
+
+    h3{
+      color:#f8fafc;
+    }
+
+    p{
+      color:#cbd5e1;
+    }
+
+    .card{
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.15);
+      border-radius:14px;
+      padding:24px;
+      margin-top:20px;
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .highlight{
+      color:#38bdf8;
+      font-weight:600;
+    }
+
+    .diagram{
+      background:#0f172a;
+      border:1px dashed rgba(148,163,184,0.25);
+      border-radius:12px;
+      padding:30px;
+      margin-top:20px;
+      overflow:auto;
+    }
+
+    .flow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .flow-box{
+      background:#111827;
+      border:1px solid rgba(56,189,248,0.3);
+      border-radius:12px;
+      padding:18px;
+      min-width:140px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .arrow{
+      color:#38bdf8;
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    .footer{
+      margin-top:70px;
+      border-top:1px solid rgba(148,163,184,0.15);
+      padding-top:25px;
+      text-align:center;
+      color:#64748b;
+      font-size:14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <section class="hero">
+
+    <div class="tag">
+      SOC Automation • AI-Assisted Triage • Detection Engineering
+    </div>
+
+    <h1>LLM-Augmented SOC Automation Pipeline</h1>
+
+    <p>
+      A lightweight SOAR-style pipeline built to automate SOC enrichment,
+      severity scoring, and analyst context generation using deterministic
+      workflows and AI-assisted analysis.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>The Problem</h2>
+
+    <div class="card">
+
+      <p>
+        Security Operations Centers process large volumes of alerts daily,
+        but many alerts lack sufficient context for rapid analyst decision-making.
+      </p>
+
+      <p>
+        Analysts often spend significant time manually:
+      </p>
+
+      <ul>
+        <li>Enriching indicators with threat intelligence</li>
+        <li>Assigning severity levels</li>
+        <li>Documenting incidents</li>
+        <li>Correlating investigation context</li>
+      </ul>
+
+      <p>
+        This creates operational problems including alert fatigue,
+        inconsistent triage outcomes, slower response times,
+        and limited auditability.
+      </p>
+
+      <p class="highlight">
+        The goal was to design an explainable AI-assisted SOC pipeline
+        where security decisions remain deterministic and auditable.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>What I Built</h2>
+
+    <div class="card">
+
+      <p>
+        I built a lightweight SOC automation pipeline using n8n that simulates
+        how modern SOC and SOAR environments automate enrichment,
+        classification, contextual analysis, and incident storage.
+      </p>
+
+      <ul>
+        <li>Webhook-based alert ingestion</li>
+        <li>VirusTotal threat intelligence enrichment</li>
+        <li>Rule-based severity scoring</li>
+        <li>LLM-powered analyst summaries via Ollama</li>
+        <li>MITRE ATT&CK mapping</li>
+        <li>Structured incident aggregation</li>
+        <li>PostgreSQL audit logging</li>
+      </ul>
+
+      <p>
+        The architecture intentionally separates deterministic security logic
+        from AI-generated contextual analysis.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Pipeline Architecture</h2>
+
+    <div class="diagram">
+
+      <div class="flow">
+
+        <div class="flow-box">
+          Python Alert Generator
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          n8n Webhook Ingestion
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          VirusTotal Enrichment
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Rule-Based Severity Engine
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Ollama AI Analysis
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          PostgreSQL Incident Storage
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>How It Works</h2>
+
+    <div class="card">
+
+      <ol>
+
+        <li>
+          Simulated alerts are generated and sent into an n8n webhook workflow.
+        </li>
+
+        <li>
+          Indicators such as IP addresses and domains are extracted for enrichment.
+        </li>
+
+        <li>
+          VirusTotal retrieves threat intelligence signals including malicious detections and reputation data.
+        </li>
+
+        <li>
+          A rule-based JavaScript engine assigns:
+          <ul>
+            <li>Severity level</li>
+            <li>Confidence score</li>
+            <li>Recommended response action</li>
+          </ul>
+        </li>
+
+        <li>
+          Ollama generates analyst-style summaries and MITRE ATT&CK mappings.
+        </li>
+
+        <li>
+          Final incident objects are aggregated and stored in PostgreSQL for auditing and future analysis.
+        </li>
+
+      </ol>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Engineering Approach</h2>
+
+    <div class="card">
+
+      <p>
+        Many AI-assisted security products centralize decision-making inside the model itself.
+        I intentionally avoided that design pattern.
+      </p>
+
+      <p>
+        The system was designed around several principles:
+      </p>
+
+      <ul>
+        <li>Security decisions should remain deterministic</li>
+        <li>Analysts require explainable and auditable workflows</li>
+        <li>AI should augment investigations rather than replace detection logic</li>
+        <li>Rule engines provide predictable and consistent outcomes</li>
+      </ul>
+
+      <p>
+        This architecture reflects how real SOC pipelines separate:
+      </p>
+
+      <ul>
+        <li>Ingestion</li>
+        <li>Enrichment</li>
+        <li>Decisioning</li>
+        <li>Contextual analysis</li>
+        <li>Storage and auditing</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Impact</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Reduced repetitive manual triage tasks through automation</li>
+        <li>Improved incident consistency using deterministic scoring logic</li>
+        <li>Enhanced analyst visibility with AI-generated context</li>
+        <li>Created structured audit-ready incident storage</li>
+        <li>Built a modular architecture capable of scaling with additional integrations</li>
+      </ul>
+
+      <p>
+        The project demonstrates how AI can responsibly augment SOC operations
+        without replacing core security decision-making processes.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Tech Stack</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>n8n</li>
+        <li>VirusTotal API</li>
+        <li>Ollama (LLM)</li>
+        <li>PostgreSQL</li>
+        <li>Python</li>
+        <li>JavaScript (n8n Code Nodes)</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <div class="footer">
+    Detection Engineering Portfolio • AI-Augmented SOC Automation Case Study
+  </div>
+
+</div>
+
+</body>
+</html>
+```
