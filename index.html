@@ -9,151 +9,180 @@
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">🛡 Detection Engineering</div>
+
   <div class="links">
-    <a href="#about">About</a>
-    <a href="#projects">Case Studies</a>
-    <a href="#github">GitHub</a>
+    <a class="nav-btn" href="#about">About</a>
+    <a class="nav-btn" href="#projects">Case Studies</a>
+    <a class="nav-btn" href="#github">GitHub</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <header class="hero">
-  <div class="hero-tag">Cloud SIEM • Detection Engineering • Automation</div>
-  <h1>Detection Engineering at Scale</h1>
-  <p>Building high-fidelity detections across cloud, identity, endpoint, and network telemetry.</p>
+  <div class="hero-tag">Security Engineering • SIEM • Cloud Detection</div>
+
+  <h1>Detection Engineering at Cloud Scale</h1>
+
+  <p>
+    Building high-fidelity detection systems across SIEM, cloud, identity, and network telemetry.
+  </p>
 
   <div class="hero-actions">
     <a class="primary-btn" href="#projects">View Case Studies</a>
     <a class="secondary-btn" href="#github">Live GitHub</a>
   </div>
 
-  <div class="hero-image">📊 Detection Architecture Diagram Placeholder</div>
+  <div class="hero-image">
+    <p>📊 Detection Architecture Overview (Placeholder Diagram)</p>
+  </div>
 
   <div class="hero-badges">
     <span>MITRE ATT&CK</span>
     <span>Cloud SIEM</span>
-    <span>Telemetry Pipelines</span>
-    <span>Security Automation</span>
+    <span>Telemetry Engineering</span>
+    <span>Detection Automation</span>
   </div>
 </header>
 
+<!-- ABOUT -->
 <section id="about" class="section">
   <h2>About</h2>
 
   <div class="about-card">
-    Cybersecurity / Detection Engineer focused on building scalable detection systems,
-    SIEM architectures, and telemetry pipelines in high-volume enterprise environments.
+    <p>
+      Cybersecurity / Detection Engineer focused on designing scalable detection systems,
+      improving signal quality, and engineering telemetry pipelines in enterprise environments.
+    </p>
 
     <div class="stats">
-      <div class="stat"><h3>40%+</h3><p>Noise Reduction</p></div>
-      <div class="stat"><h3>250+</h3><p>Log Sources</p></div>
-      <div class="stat"><h3>8h → 2h</h3><p>MTTD Improvement</p></div>
+      <div class="stat">
+        <h3>40%+</h3>
+        <p>Noise Reduction</p>
+      </div>
+
+      <div class="stat">
+        <h3>250+</h3>
+        <p>Log Sources Integrated</p>
+      </div>
+
+      <div class="stat">
+        <h3>8h → 2h</h3>
+        <p>MTTD Reduction</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- CASE STUDIES -->
 <section id="projects" class="section">
-  <h2>Case Studies</h2>
+  <h2>Featured Case Studies</h2>
 
   <div class="grid">
 
     <div class="card">
       <div class="card-tag">Detection Engineering</div>
       <h3>AI SOC Triage Pipeline</h3>
-      <div class="card-image">📌 Architecture Diagram</div>
-      <p>AI-assisted SOC triage with MITRE mapping and enrichment.</p>
-      <a class="card-btn" href="projects/ai-soc-pipeline.html">Open</a>
+      <div class="card-image">📌 Pipeline Architecture Diagram</div>
+      <p>Automated enrichment, MITRE mapping, AI-assisted severity scoring.</p>
+      <div class="card-footer">
+        <a class="card-btn" href="projects/ai-soc-pipeline.html">Open Case Study</a>
+      </div>
     </div>
 
     <div class="card">
       <div class="card-tag">Telemetry Engineering</div>
-      <h3>SIEM Pipeline System</h3>
-      <div class="card-image">📊 Log Flow Diagram</div>
-      <p>250+ sources normalized across enterprise environments.</p>
-      <a class="card-btn" href="projects/telemetry-engineering.html">Open</a>
+      <h3>SIEM Log Pipeline</h3>
+      <div class="card-image">📊 Log Flow Architecture</div>
+      <p>250+ sources normalized across cloud, endpoint, identity systems.</p>
+      <div class="card-footer">
+        <a class="card-btn" href="projects/telemetry-engineering.html">Open Case Study</a>
+      </div>
     </div>
 
     <div class="card">
       <div class="card-tag">Cloud Security</div>
       <h3>Azure Cloud Detection</h3>
-      <div class="card-image">☁️ Cloud Security Map</div>
-      <p>Entra ID + CSPM + NSG detection architecture.</p>
-      <a class="card-btn" href="projects/cloud-siem-azure.html">Open</a>
+      <div class="card-image">☁️ Cloud Detection Map</div>
+      <p>Entra ID, CSPM, NSGs integrated into detection layer.</p>
+      <div class="card-footer">
+        <a class="card-btn" href="projects/cloud-siem-azure.html">Open Case Study</a>
+      </div>
     </div>
 
   </div>
 </section>
 
+<!-- GITHUB -->
 <section id="github" class="section">
   <h2>Live GitHub Projects</h2>
   <div class="grid" id="github-projects"></div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Detection Engineering Portfolio</p>
 </footer>
 
+<!-- FIXED GITHUB SCRIPT -->
 <script>
-const langColors = {
-  Python:"#3572A5", JavaScript:"#f1e05a", Go:"#00ADD8",
-  Shell:"#89e051", TypeScript:"#2b7489"
-};
-
-function formatDate(d){
-  return new Date(d).toLocaleDateString("en-US",{month:"short",year:"numeric"});
-}
-
-async function loadRepos(){
+async function loadRepos() {
   const container = document.getElementById("github-projects");
 
   try {
     const res = await fetch("https://api.github.com/users/JanieAbutu/repos");
+
+    if (!res.ok) throw new Error("GitHub API error");
+
     const repos = await res.json();
+
+    if (!Array.isArray(repos)) throw new Error("Invalid response");
 
     container.innerHTML = "";
 
     repos
-      .filter(r => !r.fork)
-      .sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at))
-      .slice(0,6)
+      .filter(repo => !repo.fork)
+      .slice(0, 6)
       .forEach(repo => {
 
         const card = document.createElement("div");
         card.className = "card";
 
-        const color = langColors[repo.language] || "#64748b";
-
         card.innerHTML = `
-          <div class="card-top">
-            <span class="lang-dot" style="background:${color}"></span>
-            <span class="card-tag">${repo.language || "Unknown"}</span>
-          </div>
-
+          <div class="card-tag">GitHub Repo</div>
           <h3>${repo.name}</h3>
 
           <div class="card-image">🔗 Repo Preview</div>
 
-          <p>${repo.description || "No description"}</p>
+          <p>${repo.description || "No description provided"}</p>
 
-          <div class="repo-meta">
-            ⭐ ${repo.stargazers_count} • 🕒 ${formatDate(repo.updated_at)}
+          <div class="card-footer">
+            <a class="card-btn"
+               href="${repo.html_url}"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Repository
+            </a>
           </div>
-
-          <a class="card-btn" href="${repo.html_url}" target="_blank">
-            View Repository →
-          </a>
         `;
 
         container.appendChild(card);
       });
 
-  } catch(e){
-    container.innerHTML = "<div class='card'>GitHub failed to load</div>";
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = `
+      <div class="card">
+        <h3>GitHub projects failed to load</h3>
+        <p>Please refresh the page.</p>
+      </div>
+    `;
   }
 }
 
-window.addEventListener("DOMContentLoaded", loadRepos);
+document.addEventListener("DOMContentLoaded", loadRepos);
 </script>
 
 </body>
