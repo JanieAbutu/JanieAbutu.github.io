@@ -1,0 +1,413 @@
+```html id="u8n2vp"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C2 Simulation & Detection Pipeline</title>
+
+  <style>
+
+    body{
+      margin:0;
+      background:#0b1220;
+      color:#e2e8f0;
+      font-family:Inter,Arial,sans-serif;
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1050px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .hero{
+      margin-bottom:50px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.1);
+      color:#38bdf8;
+      font-size:12px;
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+      background:linear-gradient(90deg,#38bdf8,#a78bfa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    h2{
+      margin-top:50px;
+      color:#38bdf8;
+      border-left:3px solid #38bdf8;
+      padding-left:12px;
+    }
+
+    h3{
+      color:#f8fafc;
+    }
+
+    p{
+      color:#cbd5e1;
+    }
+
+    ul,ol{
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .card{
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.15);
+      border-radius:14px;
+      padding:24px;
+      margin-top:20px;
+    }
+
+    .highlight{
+      color:#38bdf8;
+      font-weight:600;
+    }
+
+    .diagram{
+      background:#0f172a;
+      border:1px dashed rgba(148,163,184,0.25);
+      border-radius:12px;
+      padding:30px;
+      margin-top:20px;
+      overflow:auto;
+    }
+
+    .flow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .flow-box{
+      background:#111827;
+      border:1px solid rgba(56,189,248,0.3);
+      border-radius:12px;
+      padding:18px;
+      min-width:150px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .arrow{
+      color:#38bdf8;
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    .footer{
+      margin-top:70px;
+      border-top:1px solid rgba(148,163,184,0.15);
+      padding-top:25px;
+      text-align:center;
+      color:#64748b;
+      font-size:14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <section class="hero">
+
+    <div class="tag">
+      Detection Engineering • C2 Simulation • Behavioral Detection
+    </div>
+
+    <h1>Secure Remote Administration Simulation</h1>
+
+    <p>
+      An end-to-end command-and-control simulation environment built to model
+      remote command execution, telemetry generation, behavioral detection,
+      and analyst investigation workflows.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>The Problem</h2>
+
+    <div class="card">
+
+      <p>
+        Many security professionals learn about command-and-control (C2)
+        infrastructure theoretically, but rarely gain visibility into how
+        attacker-controlled remote access actually appears from a telemetry
+        and detection engineering perspective.
+      </p>
+
+      <p>
+        Most educational projects focus only on exploitation or only on detection,
+        leaving a gap between:
+      </p>
+
+      <ul>
+        <li>Attacker behavior</li>
+        <li>Telemetry generation</li>
+        <li>Detection engineering</li>
+        <li>Analyst investigation workflows</li>
+      </ul>
+
+      <p class="highlight">
+        The goal was to simulate realistic remote command execution while also
+        generating the visibility and behavioral signals defenders rely on
+        during investigations.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>What I Built</h2>
+
+    <div class="card">
+
+      <p>
+        I developed an end-to-end C2 simulation and detection pipeline in Python
+        that models how remote administration channels operate in controlled environments.
+      </p>
+
+      <ul>
+        <li>Python-based command-and-control server</li>
+        <li>Remote client execution agent</li>
+        <li>SSL-encrypted communications</li>
+        <li>Structured JSON telemetry logging</li>
+        <li>Behavioral detection engine</li>
+        <li>Analyst investigation dashboard</li>
+        <li>HTML-based reporting system</li>
+      </ul>
+
+      <p>
+        The project intentionally combines offensive simulation with defensive
+        monitoring and analysis workflows.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>System Architecture</h2>
+
+    <div class="diagram">
+
+      <div class="flow">
+
+        <div class="flow-box">
+          C2 Server
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          SSL/TLS Communication
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Remote Client Agent
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Command Execution
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          JSON Telemetry Logs
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Detection Engine
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Analyst Dashboard
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>How It Works</h2>
+
+    <div class="card">
+
+      <ol>
+
+        <li>
+          A Python-based C2 server listens for inbound client connections.
+        </li>
+
+        <li>
+          The client agent connects through an SSL-encrypted communication channel.
+        </li>
+
+        <li>
+          Authentication is performed using pre-shared tokens.
+        </li>
+
+        <li>
+          Remote commands are issued from the server to the client.
+        </li>
+
+        <li>
+          Commands are executed locally using Python subprocess execution.
+        </li>
+
+        <li>
+          Structured telemetry is generated at every stage of the session.
+        </li>
+
+        <li>
+          Behavioral detection logic analyzes suspicious activity patterns.
+        </li>
+
+        <li>
+          Findings are converted into HTML investigation dashboards for analysts.
+        </li>
+
+      </ol>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Detection Engineering Focus</h2>
+
+    <div class="card">
+
+      <p>
+        This project was designed to bridge offensive security concepts with
+        defensive visibility engineering.
+      </p>
+
+      <p>
+        Rather than focusing purely on remote command execution,
+        the core engineering question was:
+      </p>
+
+      <p class="highlight">
+        If this activity occurred in production, what telemetry and behavioral indicators would defenders observe?
+      </p>
+
+      <p>
+        That perspective shaped the system architecture by intentionally separating:
+      </p>
+
+      <ul>
+        <li>Offensive simulation</li>
+        <li>Telemetry generation</li>
+        <li>Behavioral detection</li>
+        <li>Investigation workflows</li>
+        <li>Reporting and visualization</li>
+      </ul>
+
+      <p>
+        The project demonstrates how defenders identify suspicious command execution
+        behavior even when communication channels are encrypted.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Impact</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Simulated realistic command-and-control workflows</li>
+        <li>Generated structured telemetry for investigations</li>
+        <li>Built behavioral detections for suspicious execution patterns</li>
+        <li>Created analyst-friendly investigation dashboards</li>
+        <li>Connected offensive simulation directly to defensive visibility engineering</li>
+        <li>Demonstrated layered security monitoring architecture</li>
+      </ul>
+
+      <p>
+        The project reinforces how modern detection engineering depends heavily on:
+      </p>
+
+      <ul>
+        <li>Behavioral analysis</li>
+        <li>Telemetry quality</li>
+        <li>Detection logic</li>
+        <li>Investigation workflows</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Tech Stack</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Python</li>
+        <li>SSL/TLS (Python ssl module)</li>
+        <li>JSON Telemetry Logging</li>
+        <li>Pandas</li>
+        <li>HTML Dashboard Generation</li>
+        <li>Behavioral Detection Engine</li>
+        <li>Subprocess-Based Command Execution</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <div class="footer">
+    Detection Engineering Portfolio • C2 Simulation & Behavioral Detection Case Study
+  </div>
+
+</div>
+
+</body>
+</html>
+```
