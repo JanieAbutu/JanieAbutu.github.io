@@ -163,3 +163,120 @@ footer {
   border-top: 1px solid rgba(148, 163, 184, 0.15);
   margin-top: 40px;
 }
+
+
+/* =========================
+   BUTTONS (CRITICAL MISSING PIECE)
+========================= */
+
+.nav-btn {
+  padding: 6px 12px;
+  border: 1px solid rgba(148,163,184,0.2);
+  border-radius: 8px;
+}
+
+.primary-btn {
+  background: #38bdf8;
+  color: #0b1220;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.secondary-btn {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* =========================
+   HERO COMPONENTS
+========================= */
+
+.hero-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(56,189,248,0.1);
+  border-radius: 999px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.hero-image {
+  margin: 30px auto;
+  padding: 40px;
+  border: 1px dashed rgba(148,163,184,0.4);
+  border-radius: 12px;
+  color: #94a3b8;
+  max-width: 600px;
+}
+
+/* =========================
+   ABOUT STATS
+========================= */
+
+.about-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(148,163,184,0.15);
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat h3 {
+  margin: 0;
+  color: #38bdf8;
+}
+
+/* =========================
+   CARD ENHANCEMENTS
+========================= */
+
+.card-tag {
+  font-size: 11px;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.card-image {
+  margin: 12px 0;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px dashed rgba(148,163,184,0.4);
+  text-align: center;
+  color: #94a3b8;
+}
+
+.card-footer {
+  margin-top: 12px;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background: rgba(56,189,248,0.15);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #38bdf8;
+}
+
+.card-btn:hover {
+  background: rgba(56,189,248,0.25);
+}
+
+
+
+
+
+
+
+
