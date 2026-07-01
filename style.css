@@ -1,106 +1,96 @@
-/* =========================
-   BASE THEME
-========================= */
-
 body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: radial-gradient(circle at top, #0b1220, #070a12);
-  color: #e5e7eb;
+  margin:0;
+  font-family: Arial;
+  background: radial-gradient(circle,#0b1220,#070a12);
+  color:#e5e7eb;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
+/* NAV */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 40px;
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  display:flex;
+  justify-content:space-between;
+  padding:18px 40px;
+  background:rgba(15,23,42,0.8);
+  backdrop-filter:blur(10px);
 }
 
-.navbar .logo {
-  font-weight: 600;
-  color: #38bdf8;
-}
+.navbar a { color:#cbd5e1; margin-left:12px; text-decoration:none; }
 
-.navbar a {
-  margin-left: 18px;
-  text-decoration: none;
-  color: #cbd5e1;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  padding: 90px 40px;
-  text-align: center;
-}
+/* HERO */
+.hero { text-align:center; padding:80px 40px; }
 
 .hero h1 {
-  font-size: 46px;
-  font-weight: 700;
-  background: linear-gradient(90deg, #38bdf8, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size:42px;
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* =========================
-   SECTION + GRID
-========================= */
-
-.section {
-  padding: 60px 40px;
+.hero-tag {
+  background:rgba(56,189,248,0.1);
+  padding:6px 12px;
+  display:inline-block;
+  border-radius:999px;
 }
 
+.hero-image {
+  margin:25px auto;
+  padding:40px;
+  border:1px dashed #334155;
+  max-width:600px;
+  color:#94a3b8;
+}
+
+/* SECTIONS */
+.section { padding:60px 40px; }
+
+h2 { border-left:3px solid #38bdf8; padding-left:10px; }
+
+/* GRID */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
 }
 
-/* =========================
-   CARD
-========================= */
-
+/* CARDS */
 .card {
-  background: linear-gradient(180deg, #111827, #0b1220);
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  padding: 18px;
-  border-radius: 14px;
+  background:#0f172a;
+  border:1px solid #1f2937;
+  padding:16px;
+  border-radius:12px;
 }
 
-/* =========================
-   BUTTONS (IMPORTANT)
-========================= */
+.card:hover { border-color:#38bdf8; transform:translateY(-4px); }
 
+.card-image {
+  padding:20px;
+  border:1px dashed #334155;
+  margin:10px 0;
+  text-align:center;
+}
+
+/* BADGES */
+.hero-badges span {
+  margin:5px;
+  padding:5px 10px;
+  border:1px solid #334155;
+  border-radius:999px;
+}
+
+/* META */
+.repo-meta {
+  font-size:12px;
+  color:#94a3b8;
+}
+
+/* BUTTON */
 .card-btn {
-  display: inline-block;
-  padding: 8px 12px;
-  background: rgba(56, 189, 248, 0.15);
-  border-radius: 8px;
-  text-decoration: none;
-  color: #38bdf8;
-}
-
-.card-btn:hover {
-  background: rgba(56, 189, 248, 0.25);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #64748b;
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 10px;
+  background:#38bdf8;
+  color:#0b1220;
+  border-radius:8px;
+  text-decoration:none;
 }
