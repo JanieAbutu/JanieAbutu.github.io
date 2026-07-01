@@ -116,10 +116,51 @@
       font-size:14px;
     }
 
+    .case-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    
+      padding: 14px 24px;
+    
+      background: rgba(11, 18, 32, 0.85);
+      backdrop-filter: blur(12px);
+    
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+    
+    .back-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      transition: 0.2s;
+    }
+    
+    .back-link:hover {
+      background: rgba(56, 189, 248, 0.12);
+    }
+    
+    .case-title {
+      color: #cbd5e1;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
   </style>
 </head>
 
 <body>
+<nav class="case-navbar">
+  <a href="../index.html" class="back-link">← Back</a>
+  <span class="case-title">Case Study</span>
+</nav>
 
 <div class="container">
 
