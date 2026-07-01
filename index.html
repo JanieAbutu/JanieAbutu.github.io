@@ -137,7 +137,8 @@ async function loadRepos(){
           <p>${repo.description || "No description"}</p>
 
           <div class="repo-meta">
-            ⭐ ${repo.stargazers_count} • 🕒 ${formatDate(repo.updated_at)}
+            📅 Created ${formatDate(repo.created_at)}
+            • 🔄 Updated ${formatDate(repo.updated_at)}
           </div>
 
           <a class="card-btn" href="${repo.html_url}" target="_blank">
