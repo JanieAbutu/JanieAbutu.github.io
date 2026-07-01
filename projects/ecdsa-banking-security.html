@@ -1,0 +1,362 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECDSA Banking Security Case Study</title>
+
+  <style>
+
+    body{
+      margin:0;
+      background:#0b1220;
+      color:#e2e8f0;
+      font-family:Inter,Arial,sans-serif;
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .hero{
+      margin-bottom:50px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.12);
+      color:#38bdf8;
+      font-size:12px;
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+      background:linear-gradient(90deg,#38bdf8,#a78bfa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    h2{
+      margin-top:50px;
+      color:#38bdf8;
+      border-left:3px solid #38bdf8;
+      padding-left:12px;
+    }
+
+    p{
+      color:#cbd5e1;
+    }
+
+    .card{
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.15);
+      border-radius:14px;
+      padding:24px;
+      margin-top:20px;
+    }
+
+    .diagram{
+      background:#0f172a;
+      border:1px dashed rgba(148,163,184,0.3);
+      border-radius:12px;
+      padding:30px;
+      overflow:auto;
+      margin-top:20px;
+    }
+
+    .flow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .flow-box{
+      background:#111827;
+      border:1px solid rgba(56,189,248,0.3);
+      border-radius:12px;
+      padding:18px;
+      min-width:140px;
+      text-align:center;
+    }
+
+    .arrow{
+      color:#38bdf8;
+      font-size:28px;
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .highlight{
+      color:#38bdf8;
+      font-weight:600;
+    }
+
+    .footer{
+      margin-top:60px;
+      padding-top:30px;
+      border-top:1px solid rgba(148,163,184,0.15);
+      color:#64748b;
+      text-align:center;
+      font-size:14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <section class="hero">
+
+    <div class="tag">
+      Applied Cryptography • Security Engineering • Offensive Simulation
+    </div>
+
+    <h1>Securing Banking Transactions Using ECDSA</h1>
+
+    <p>
+      A security engineering case study exploring how secure cryptographic algorithms
+      can still fail when implemented incorrectly in banking transaction systems.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>The Problem</h2>
+
+    <div class="card">
+
+      <p>
+        Modern banking systems rely heavily on cryptographic protocols to secure
+        transactions, authenticate users, and maintain transaction integrity.
+        However, many real-world breaches occur not because the cryptography is weak,
+        but because implementation decisions introduce exploitable vulnerabilities.
+      </p>
+
+      <p>
+        This project explores a practical security question:
+      </p>
+
+      <p class="highlight">
+        What happens when secure cryptographic algorithms are integrated insecurely into transaction systems?
+      </p>
+
+      <p>
+        Rather than building a purely academic cryptography demo, I designed a
+        banking transaction simulation environment that intentionally introduces
+        insecure implementation patterns to demonstrate how attackers exploit
+        protocol weaknesses in production systems.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>What I Built</h2>
+
+    <div class="card">
+
+      <p>
+        I developed a Python-based banking transaction simulation platform using:
+      </p>
+
+      <ul>
+        <li>ECDSA digital signatures</li>
+        <li>SHA-256 transaction hashing</li>
+        <li>Custom ledger validation workflows</li>
+        <li>Replay protection mechanisms</li>
+        <li>Secure and intentionally vulnerable transaction paths</li>
+      </ul>
+
+      <p>
+        The system simulates how banking transactions are created, signed,
+        verified, validated, and committed into a transaction ledger.
+      </p>
+
+      <p>
+        Vulnerable modules were intentionally added to demonstrate realistic
+        attack scenarios against poorly implemented cryptographic systems.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Transaction Security Flow</h2>
+
+    <div class="diagram">
+
+      <div class="flow">
+
+        <div class="flow-box">
+          Transaction Created
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          SHA-256 Hashing
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          ECDSA Signature
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Verification Engine
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+          Ledger Commit
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Attack Simulations</h2>
+
+    <div class="card">
+
+      <h3>Nonce Reuse Attack</h3>
+
+      <p>
+        Simulated insecure nonce reuse during ECDSA signing, allowing attackers
+        to mathematically recover private signing keys and compromise accounts.
+      </p>
+
+      <h3>Replay Attack</h3>
+
+      <p>
+        Disabled transaction uniqueness validation to demonstrate how attackers
+        can resend valid transactions multiple times.
+      </p>
+
+      <h3>Signature Forgery</h3>
+
+      <p>
+        Introduced weak signature validation logic to demonstrate unauthorized
+        transaction execution through forged signatures.
+      </p>
+
+      <h3>MITM Tampering</h3>
+
+      <p>
+        Simulated transaction interception and modification attacks caused by
+        weak trust assumptions between communicating systems.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Engineering Focus</h2>
+
+    <div class="card">
+
+      <p>
+        This project was approached from a security engineering perspective rather
+        than purely academic cryptography research.
+      </p>
+
+      <p>
+        The focus was understanding:
+      </p>
+
+      <ul>
+        <li>How developers misuse secure cryptographic primitives</li>
+        <li>How implementation flaws create exploitable attack surfaces</li>
+        <li>How layered verification controls improve transaction integrity</li>
+        <li>How offensive testing validates defensive security assumptions</li>
+      </ul>
+
+      <p>
+        Building the project as an interactive CLI simulation environment made it
+        possible to observe attacks and defenses step-by-step in a controlled setting.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Key Security Findings</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Strong cryptographic algorithms fail when implementation controls are weak</li>
+        <li>Nonce reuse can completely compromise ECDSA private keys</li>
+        <li>Replay protection is critical in financial transaction systems</li>
+        <li>Defense-in-depth validation significantly improves transaction integrity</li>
+        <li>Protocol design mistakes can undermine mathematically secure systems</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Tech Stack</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Python</li>
+        <li>ECDSA</li>
+        <li>SHA-256</li>
+        <li>CLI Simulation Environment</li>
+        <li>Custom Ledger System</li>
+        <li>Cryptographic Verification Workflows</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <div class="footer">
+    Detection Engineering Portfolio • Applied Cryptography Security Case Study
+  </div>
+
+</div>
+
+</body>
+</html>
+```
