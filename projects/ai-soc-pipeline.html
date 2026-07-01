@@ -7,46 +7,34 @@
 
 <body>
 
-<div class="container">
+<nav class="navbar">
+  <a href="../index.html">← Back</a>
+</nav>
 
-<h1>AI-Augmented SOC Alert Triage Pipeline</h1>
+<header class="hero">
+  <h1>AI SOC Triage Pipeline</h1>
+  <p>Detection Engineering System</p>
+</header>
 
-<h2>Context</h2>
-<p>
-SOC environments struggle with alert fatigue due to high-volume, low-context security events.
-</p>
+<section class="section">
 
-<h2>Architecture</h2>
-<p>
-Webhook-based ingestion → enrichment layer → MITRE ATT&CK mapping → AI-assisted scoring → PostgreSQL logging.
-</p>
+  <div class="card">
+    <h2>Architecture</h2>
+    <div class="card-image">📊 System Diagram</div>
+    <p>Webhook → Enrichment → MITRE → AI Scoring → Storage</p>
+  </div>
 
-<h2>Detection Engineering Design</h2>
-<p>
-Combined rule-based heuristics with LLM-assisted classification to improve alert prioritization consistency.
-</p>
+  <div class="card">
+    <h2>Impact</h2>
+    <p>Improved SOC triage efficiency and reduced manual workload.</p>
+  </div>
 
-<h2>Implementation</h2>
-<ul>
-  <li>Python-based ingestion and enrichment pipeline</li>
-  <li>VirusTotal threat intelligence integration</li>
-  <li>Ollama LLM for contextual analysis</li>
-  <li>PostgreSQL for structured audit logging</li>
-</ul>
+  <div class="card">
+    <h2>Stack</h2>
+    <p>Python • n8n • PostgreSQL • VirusTotal • Ollama</p>
+  </div>
 
-<h2>Impact</h2>
-<ul>
-  <li>Improved triage consistency</li>
-  <li>Reduced manual investigation overhead</li>
-</ul>
-
-<h2>Stack</h2>
-<p>Python, n8n, PostgreSQL, VirusTotal API, Ollama</p>
-
-<h2>Code</h2>
-<p><a href="https://github.com/yourrepo">View Implementation</a></p>
-
-</div>
+</section>
 
 </body>
 </html>
