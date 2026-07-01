@@ -67,47 +67,59 @@
   <div class="about-card">
 
     <p>
-      My work in security comes from environments where detection quality is not abstract — it directly affects
-      operational stability, financial integrity, and trust. In banking and fintech systems, a weak detection model
-      doesn’t just create noise; it creates blind spots or operational disruption at scale.
+      My background is in environments where getting detection wrong has consequences — banking infrastructure,
+      fintech platforms, and regulated systems where a missed alert or a miscalibrated detection at scale carries
+      real operational cost.
     </p>
 
     <p>
-      I started in SOC environments working within traditional alert-driven workflows: monitoring SIEM dashboards,
-      triaging incidents, and responding to escalations across high-volume infrastructures. That experience gave me
-      operational depth, but it also exposed a structural issue — most detections were not designed from an
-      understanding of attacker behaviour or system context.
+      That context shaped how I think. Early in my career I was doing what most SOC analysts do — monitoring,
+      triaging, escalating. I was good at it. But I kept running into the same problem: the detections I was
+      working with weren't built from a genuine understanding of the threat. They were built from templates,
+      vendor defaults, and reactive tuning. The noise was the symptom. The root cause was that detection logic
+      had been disconnected from security reasoning.
     </p>
 
     <p>
-      Instead, they were often inherited from vendor templates, generic rulesets, or reactive tuning cycles built
-      after noise had already appeared. This created a gap between what security teams wanted to detect and what
-      the systems were actually capable of reliably identifying.
+      That gap is what pushed me toward detection engineering — and toward a specific way of working. Not starting
+      with a tool and asking what it can detect, but starting with the threat, mapping it to the attack surface,
+      identifying the telemetry that would surface it, and then engineering the logic around it. Threat modelling,
+      risk assessment, and frameworks like MITRE ATT&CK, NIST CSF, and CIS Controls stopped being compliance exercises
+      and became the reasoning layer I build detections on top of.
     </p>
 
     <p>
-      That gap is what pushed me toward detection engineering as a design discipline rather than an operational function.
-      I shifted from consuming detections to reconstructing how they should be built — starting with threat behaviour,
-      mapping it to attack surfaces, and reasoning about what evidence would exist in telemetry if that behaviour
-      occurred in a real system.
+      The other thing I developed was what I think of as the translation function. Security requirements don't arrive
+      pre-formatted for a SIEM. A risk assessment surfaces a threat. A framework maps a control. Someone has to convert
+      that into a correlation rule, a telemetry pipeline, a detection threshold, an automation playbook. That translation —
+      from security principle into operational system — is where I spend most of my engineering effort, and where I think
+      the real leverage is.
     </p>
 
     <p>
-      In that transition, frameworks like MITRE ATT&CK, NIST CSF, and CIS Controls became part of my reasoning model —
-      not as compliance artifacts, but as structured ways to define detection intent. They help bridge the gap between
-      abstract security requirements and observable system behaviour.
+      Every project in this portfolio starts from that position. The SIEM architectures, the data pipelines, the automation
+      workflows, the C2 simulation — each one is an attempt to build a system that reasons about threats the way a good
+      analyst would, but at a consistency and scale that no analyst can maintain alone.
     </p>
 
-    <p>
-      From there, my focus expanded into what I see as a translation layer in security engineering: converting threat
-      models and risk understanding into operational systems. That includes SIEM architecture, telemetry pipelines,
-      correlation logic, enrichment workflows, and automation systems that scale detection beyond manual reasoning.
-    </p>
+    <div class="stats">
 
-    <p>
-      The projects in this portfolio reflect that progression — from SOC operations, to detection design, to building
-      systems that connect security reasoning directly to operational execution.
-    </p>
+      <div class="stat">
+        <h3>40%+</h3>
+        <p>False positive reduction at Interswitch Group through detection re-engineering</p>
+      </div>
+
+      <div class="stat">
+        <h3>250+</h3>
+        <p>Log sources onboarded across enterprise environments</p>
+      </div>
+
+      <div class="stat">
+        <h3>8h → 2h</h3>
+        <p>MTTD/MTTR improvement through structured detection engineering</p>
+      </div>
+
+    </div>
 
   </div>
 
