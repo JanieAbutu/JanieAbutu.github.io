@@ -3,202 +3,231 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deepfake Detection — EfficientNet-B7</title>
-  <link rel="stylesheet" href="../style.css"/>
+  <title>Deepfake Image Detection using EfficientNet-B7</title>
+
+  <link rel="stylesheet" href="../assets/css/cs_style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="case-navbar">
   <a href="../index.html" class="back-link">← Back</a>
   <span class="case-title">Case Study</span>
 </nav>
 
-<div class="case-container">
+<div class="container">
 
   <!-- HERO -->
-  <section class="case-hero">
-    <div class="case-tag">AI Security • Computer Vision • Deepfake Detection</div>
+  <section class="hero">
 
-    <h1>Deepfake Detection using EfficientNet-B7</h1>
+    <div class="tag">
+      Machine Learning • Computer Vision • Detection Engineering
+    </div>
 
-    <p class="case-subtitle">
-      A reproducible deep learning system for detecting AI-generated and manipulated images
-      using transfer learning, forensic feature extraction, and structured ML evaluation pipelines.
+    <h1>Deepfake Image Detection using EfficientNet-B7</h1>
+
+    <p>
+      A deep learning-based forensic vision system designed to detect AI-generated and manipulated facial images using transfer learning and EfficientNet-B7.
     </p>
+
   </section>
 
   <!-- PROBLEM -->
-  <section class="case-section">
+  <section>
+
     <h2>The Problem</h2>
 
-    <div class="case-card">
+    <div class="card">
+
       <p>
-        AI-generated media is becoming increasingly realistic, making manual detection
-        unreliable across domains such as identity verification, fraud detection,
-        journalism, and social media integrity.
+        AI-generated media has made manipulated images increasingly realistic and difficult to detect manually.
+        Deepfakes introduce risks across identity verification, fraud detection, journalism integrity, and digital trust systems.
       </p>
 
       <p>
-        Traditional computer vision methods struggle with:
+        Traditional computer vision approaches struggle with:
       </p>
 
       <ul>
         <li>Subtle manipulation artifacts</li>
-        <li>Dataset-specific overfitting</li>
+        <li>Rapidly evolving generative models</li>
         <li>Poor generalization to unseen synthetic data</li>
       </ul>
 
-      <p>
-        The goal was to build a system that learns generalized forensic patterns rather
-        than memorizing dataset artifacts.
+      <p class="highlight">
+        The core challenge was building a model that learns forensic signals rather than dataset-specific shortcuts.
       </p>
+
     </div>
+
   </section>
 
-  <!-- WHAT I BUILT -->
-  <section class="case-section">
+  <!-- BUILD -->
+  <section>
+
     <h2>What I Built</h2>
 
-    <div class="case-card">
+    <div class="card">
+
       <p>
-        A deep learning binary classification pipeline using EfficientNet-B7 with transfer learning
-        to classify images as either real or AI-manipulated.
+        I built a binary image classification system using EfficientNet-B7 and transfer learning to classify images as real or deepfake.
       </p>
 
       <ul>
-        <li>Image preprocessing and augmentation pipeline</li>
-        <li>EfficientNet-B7 transfer learning model</li>
-        <li>PyTorch training workflow with reproducibility controls</li>
-        <li>Evaluation using classification metrics</li>
-        <li>Checkpointing and early stopping</li>
+        <li>EfficientNet-B7 pretrained backbone (ImageNet)</li>
+        <li>Custom binary classification head</li>
+        <li>PyTorch training pipeline</li>
+        <li>Data preprocessing and augmentation pipeline</li>
+        <li>Model checkpointing and early stopping</li>
+        <li>Evaluation using multiple metrics</li>
       </ul>
+
+      <p>
+        The system was trained on FaceForensics++ dataset frames and optimized for balanced detection performance.
+      </p>
+
     </div>
+
   </section>
 
   <!-- ARCHITECTURE -->
-  <section class="case-section">
-    <h2>Architecture</h2>
+  <section>
 
-    <div class="case-diagram">
-      <div class="diagram-flow">
+    <h2>System Architecture</h2>
 
-        <div class="diagram-box">Image Dataset</div>
-        <div class="diagram-arrow">→</div>
+    <div class="diagram">
 
-        <div class="diagram-box">Preprocessing & Augmentation</div>
-        <div class="diagram-arrow">→</div>
+      <div class="flow">
 
-        <div class="diagram-box">EfficientNet-B7</div>
-        <div class="diagram-arrow">→</div>
-
-        <div class="diagram-box">Binary Classifier</div>
-        <div class="diagram-arrow">→</div>
-
-        <div class="diagram-box">Evaluation Metrics</div>
+        <div class="flow-box">FaceForensics++ Dataset</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Preprocessing & Augmentation</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">EfficientNet-B7 Backbone</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Binary Classifier Head</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Training Pipeline (PyTorch)</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Evaluation Metrics</div>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="case-section">
+  <section>
+
     <h2>How It Works</h2>
 
-    <div class="workflow-step">
-      Images are normalized, resized, and augmented to improve generalization.
+    <div class="card">
+
+      <ol>
+
+        <li>Dataset images are loaded from FaceForensics++ frames.</li>
+
+        <li>Images are resized, normalized, and augmented.</li>
+
+        <li>EfficientNet-B7 pretrained on ImageNet is loaded.</li>
+
+        <li>The classification head is replaced with a binary classifier.</li>
+
+        <li>Model is fine-tuned on deepfake vs real image dataset.</li>
+
+        <li>Training is optimized using early stopping and checkpoints.</li>
+
+        <li>Performance is evaluated using accuracy, precision, recall, F1, and AUROC.</li>
+
+        <li>ROC curves and confusion matrices are generated for analysis.</li>
+
+      </ol>
+
     </div>
 
-    <div class="workflow-step">
-      A pretrained EfficientNet-B7 model is loaded and adapted for binary classification.
-    </div>
-
-    <div class="workflow-step">
-      The classification head is replaced and fine-tuned on deepfake datasets.
-    </div>
-
-    <div class="workflow-step">
-      The model learns forensic patterns distinguishing real vs manipulated images.
-    </div>
-
-    <div class="workflow-step">
-      Performance is evaluated using accuracy, precision, recall, F1-score, and AUROC.
-    </div>
   </section>
 
-  <!-- THOUGHT PROCESS -->
-  <section class="case-section">
-    <h2>Engineering Thought Process</h2>
+  <!-- THINKING -->
+  <section>
 
-    <div class="case-card">
+    <h2>Thought Process</h2>
+
+    <div class="card">
+
       <p>
-        Deepfake detection is fundamentally a generalization problem rather than a pure accuracy problem.
+        The key objective was not just classification accuracy, but generalization.
+        Deepfake detection fails when models learn dataset artifacts instead of forensic patterns.
       </p>
 
       <p>
-        The focus was not just model performance, but whether the system could detect
-        manipulation patterns across unseen datasets without overfitting to artifacts.
-      </p>
-
-      <p>
-        This guided decisions around:
+        To address this, the design focused on:
       </p>
 
       <ul>
         <li>Transfer learning instead of training from scratch</li>
         <li>Strong augmentation strategies</li>
-        <li>Balanced evaluation metrics (not accuracy alone)</li>
-        <li>Reproducible training configuration</li>
+        <li>Balanced evaluation metrics over accuracy alone</li>
+        <li>Reproducible training pipeline design</li>
       </ul>
+
+      <p class="highlight">
+        The guiding question was whether the model could detect manipulation patterns beyond the training dataset.
+      </p>
+
     </div>
+
   </section>
 
   <!-- IMPACT -->
-  <section class="case-section">
+  <section>
+
     <h2>Impact</h2>
 
-    <div class="case-metrics">
+    <div class="card">
 
-      <div class="metric">
-        <h3>98.07%</h3>
-        <p>Accuracy</p>
-      </div>
+      <ul>
+        <li>98.07% classification accuracy on test data</li>
+        <li>High precision-recall balance across classes</li>
+        <li>Robust generalization on unseen validation samples</li>
+        <li>End-to-end reproducible ML pipeline</li>
+      </ul>
 
-      <div class="metric">
-        <h3>98.08%</h3>
-        <p>F1 Score</p>
-      </div>
-
-      <div class="metric">
-        <h3>99.66%</h3>
-        <p>AUROC</p>
-      </div>
-
-    </div>
-
-    <div class="case-card" style="margin-top:20px;">
       <p>
-        The system demonstrates practical application of deep learning in synthetic media detection
-        and provides a foundation for future work in explainable AI and domain adaptation.
+        The project demonstrates practical application of computer vision in security-focused forensic analysis,
+        with direct relevance to fraud detection and synthetic media verification systems.
       </p>
+
     </div>
+
   </section>
 
   <!-- TECH STACK -->
-  <section class="case-section">
+  <section>
+
     <h2>Tech Stack</h2>
 
-    <div class="case-stack">
-      <span>Python</span>
-      <span>PyTorch</span>
-      <span>EfficientNet-B7</span>
-      <span>Scikit-learn</span>
-      <span>NumPy</span>
-      <span>Matplotlib</span>
-      <span>FaceForensics++</span>
+    <div class="card">
+
+      <ul>
+        <li>Python</li>
+        <li>PyTorch</li>
+        <li>Torchvision</li>
+        <li>EfficientNet-B7</li>
+        <li>Scikit-Learn</li>
+        <li>NumPy</li>
+        <li>Matplotlib</li>
+        <li>FaceForensics++ Dataset</li>
+      </ul>
+
     </div>
+
   </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Detection Engineering Portfolio • Deepfake Image Detection Case Study
+  </div>
 
 </div>
 
