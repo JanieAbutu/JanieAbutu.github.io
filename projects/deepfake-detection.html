@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Deepfake Detection using EfficientNet-B7</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- STICKY NAVBAR -->
+<nav class="case-navbar">
+  <a href="../index.html" class="back-link">← Back to Portfolio</a>
+  <div class="case-title">
+    Deepfake Detection using EfficientNet-B7
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="case-study">
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-tag">
+      Machine Learning · Computer Vision · AI Security
+    </div>
+
+    <h1>Deepfake Image Detection using EfficientNet-B7</h1>
+
+    <p class="case-subtitle">
+      Transfer-learning based deepfake detection pipeline engineered
+      to identify manipulated facial imagery using EfficientNet-B7,
+      reproducible ML workflows, and balanced forensic evaluation.
+    </p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="case-section">
+
+    <h2>The Problem</h2>
+
+    <p>
+      AI-generated synthetic media has made manipulated imagery increasingly
+      realistic and difficult to identify manually. Deepfakes now introduce
+      operational risks across identity verification, financial fraud,
+      misinformation, journalism, and digital trust systems.
+    </p>
+
+    <p>
+      Traditional computer vision approaches often struggle against modern
+      generative models because manipulation artifacts become progressively
+      more subtle as synthesis techniques evolve.
+    </p>
+
+    <p>
+      I wanted to explore how modern deep learning architectures could improve
+      detection accuracy while also addressing a more important engineering
+      challenge:
+    </p>
+
+    <blockquote>
+      Can a model learn generalized forensic signals rather than memorizing
+      dataset-specific artifacts?
+    </blockquote>
+
+    <p>
+      That question shaped the entire project architecture. The objective
+      was not simply achieving benchmark accuracy, but engineering a
+      reproducible detection pipeline capable of generalizing across
+      manipulated media patterns.
+    </p>
+
+  </section>
+
+  <!-- WHAT I BUILT -->
+  <section class="case-section">
+
+    <h2>What I Built</h2>
+
+    <p>
+      I built a binary deepfake image classification pipeline using
+      EfficientNet-B7 and transfer learning to classify facial images
+      as either authentic or manipulated.
+    </p>
+
+    <p>
+      The project was designed as a research-oriented machine learning
+      workflow rather than a standalone training script. The architecture
+      supports reproducibility, iterative experimentation, retraining,
+      and future extension.
+    </p>
+
+    <div class="highlight-box">
+
+      <h3>Core Components</h3>
+
+      <ul>
+        <li>Image preprocessing and augmentation workflows</li>
+        <li>EfficientNet-B7 transfer learning pipeline</li>
+        <li>PyTorch-based training orchestration</li>
+        <li>Checkpointing and early stopping mechanisms</li>
+        <li>Evaluation and visualization workflows</li>
+        <li>Confusion matrix and ROC analysis</li>
+        <li>Reproducible deterministic training configuration</li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- FLOW DIAGRAM -->
+  <section class="case-section">
+
+    <h2>Pipeline Architecture</h2>
+
+    <div class="diagram">
+
+      <div class="diagram-row">
+        <div class="diagram-box">FaceForensics++ Dataset</div>
+        <div class="diagram-arrow">→</div>
+
+        <div class="diagram-box">
+          Image Preprocessing
+          <span>
+            Resize · Normalize · Augment
+          </span>
+        </div>
+
+        <div class="diagram-arrow">→</div>
+
+        <div class="diagram-box">
+          EfficientNet-B7
+          <span>
+            Transfer Learning
+          </span>
+        </div>
+      </div>
+
+      <div class="diagram-row">
+
+        <div class="diagram-box">
+          Binary Classification Head
+        </div>
+
+        <div class="diagram-arrow">→</div>
+
+        <div class="diagram-box">
+          Training Pipeline
+          <span>
+            Checkpointing · Early Stopping
+          </span>
+        </div>
+
+        <div class="diagram-arrow">→</div>
+
+        <div class="diagram-box">
+          Evaluation Layer
+          <span>
+            Accuracy · F1 · AUROC
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="case-section">
+
+    <h2>How It Works</h2>
+
+    <div class="workflow">
+
+      <div class="workflow-step">
+        <h3>1. Data Preparation</h3>
+
+        <p>
+          Images are extracted from the FaceForensics++ dataset,
+          resized, normalized, and augmented to improve generalization
+          and reduce overfitting.
+        </p>
+      </div>
+
+      <div class="workflow-step">
+        <h3>2. Transfer Learning</h3>
+
+        <p>
+          EfficientNet-B7 pretrained on ImageNet is loaded as the
+          backbone feature extractor, while the classification head
+          is replaced with a binary output layer.
+        </p>
+      </div>
+
+      <div class="workflow-step">
+        <h3>3. Model Training</h3>
+
+        <p>
+          Fine-tuning is performed using PyTorch training loops with
+          deterministic seeds, checkpointing, and early stopping to
+          improve reproducibility and training stability.
+        </p>
+      </div>
+
+      <div class="workflow-step">
+        <h3>4. Classification & Evaluation</h3>
+
+        <p>
+          The model learns discriminative patterns between authentic
+          and manipulated imagery and is evaluated using balanced
+          classification metrics including precision, recall, F1-score,
+          and AUROC.
+        </p>
+      </div>
+
+      <div class="workflow-step">
+        <h3>5. Visualization Layer</h3>
+
+        <p>
+          ROC curves and confusion matrices are generated to analyze
+          classification behavior, false positives, and overall model
+          reliability.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- THOUGHT PROCESS -->
+  <section class="case-section">
+
+    <h2>Engineering Approach</h2>
+
+    <p>
+      I approached this project from both a machine learning and
+      cybersecurity perspective.
+    </p>
+
+    <p>
+      A major problem in deepfake detection is that models can appear
+      highly accurate while still learning shortcuts tied to dataset
+      compression artifacts or synthetic noise patterns rather than
+      generalized forensic indicators.
+    </p>
+
+    <p>
+      Because of that, I focused heavily on:
+    </p>
+
+    <ul>
+      <li>balanced evaluation metrics,</li>
+      <li>augmentation strategies,</li>
+      <li>transfer learning generalization,</li>
+      <li>reproducible experimentation,</li>
+      <li>and stable training workflows.</li>
+    </ul>
+
+    <p>
+      EfficientNet-B7 was selected because its compound scaling
+      architecture provides strong feature extraction performance
+      while remaining computationally efficient relative to model size.
+    </p>
+
+    <p>
+      The broader objective was engineering a detection workflow that
+      could evolve alongside increasingly sophisticated synthetic
+      media generation techniques.
+    </p>
+
+  </section>
+
+  <!-- IMPACT -->
+  <section class="case-section">
+
+    <h2>Results & Impact</h2>
+
+    <div class="metrics-grid">
+
+      <div class="metric-card">
+        <h3>98.07%</h3>
+        <p>Accuracy</p>
+      </div>
+
+      <div class="metric-card">
+        <h3>98.14%</h3>
+        <p>Precision</p>
+      </div>
+
+      <div class="metric-card">
+        <h3>98.01%</h3>
+        <p>Recall</p>
+      </div>
+
+      <div class="metric-card">
+        <h3>99.66%</h3>
+        <p>AUROC</p>
+      </div>
+
+    </div>
+
+    <p>
+      Beyond benchmark performance, the project demonstrates practical
+      application of transfer learning, reproducible ML engineering,
+      and forensic image analysis techniques relevant to modern
+      synthetic media security challenges.
+    </p>
+
+  </section>
+
+  <!-- STACK -->
+  <section class="case-section">
+
+    <h2>Tech Stack</h2>
+
+    <div class="stack-grid">
+
+      <span>Python</span>
+      <span>PyTorch</span>
+      <span>Torchvision</span>
+      <span>EfficientNet-B7</span>
+      <span>Scikit-Learn</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
+      <span>Matplotlib</span>
+      <span>FaceForensics++</span>
+
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
