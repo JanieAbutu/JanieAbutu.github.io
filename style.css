@@ -58,7 +58,18 @@ body {
     max-width: 850px;
     text-align: justify;
   }
-  
+
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .hero-badges span {
+    display: inline-block;
+  }
   /* CTA buttons */
   .hero-actions {
     margin-top: 28px;
