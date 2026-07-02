@@ -47,6 +47,7 @@ body {
     margin-bottom: 24px;
     letter-spacing: -0.5px;
     max-width: 900px;
+    justify-content: center;
   }
   
   /* hero paragraphs */
