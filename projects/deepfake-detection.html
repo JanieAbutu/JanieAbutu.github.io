@@ -5,7 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Deepfake Image Detection using EfficientNet-B7</title>
 
-  <link rel="stylesheet" href="../assets/css/cs_style.css">
+  <style>
+
+    body{
+      margin:0;
+      background:#0b1220;
+      color:#e2e8f0;
+      font-family:Inter,Arial,sans-serif;
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1050px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .hero{
+      margin-bottom:50px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.1);
+      color:#38bdf8;
+      font-size:12px;
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+      background:linear-gradient(90deg,#38bdf8,#a78bfa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    h2{
+      margin-top:50px;
+      color:#38bdf8;
+      border-left:3px solid #38bdf8;
+      padding-left:12px;
+    }
+
+    h3{
+      color:#f8fafc;
+    }
+
+    p{
+      color:#cbd5e1;
+    }
+
+    ul,ol{
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .card{
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.15);
+      border-radius:14px;
+      padding:24px;
+      margin-top:20px;
+    }
+
+    .highlight{
+      color:#38bdf8;
+      font-weight:600;
+    }
+
+    .diagram{
+      background:#0f172a;
+      border:1px dashed rgba(148,163,184,0.25);
+      border-radius:12px;
+      padding:30px;
+      margin-top:20px;
+      overflow:auto;
+    }
+
+    .flow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .flow-box{
+      background:#111827;
+      border:1px solid rgba(56,189,248,0.3);
+      border-radius:12px;
+      padding:18px;
+      min-width:150px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .arrow{
+      color:#38bdf8;
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    .footer{
+      margin-top:70px;
+      border-top:1px solid rgba(148,163,184,0.15);
+      padding-top:25px;
+      text-align:center;
+      color:#64748b;
+      font-size:14px;
+    }
+
+    .case-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 14px 24px;
+
+      background: rgba(11, 18, 32, 0.85);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .back-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .case-title {
+      color: #cbd5e1;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -27,7 +181,7 @@
     <h1>Deepfake Image Detection using EfficientNet-B7</h1>
 
     <p>
-      A deep learning-based forensic vision system designed to detect AI-generated and manipulated facial images using transfer learning and EfficientNet-B7.
+      A deep learning-based forensic vision system built to detect AI-generated and manipulated facial images using transfer learning and EfficientNet-B7.
     </p>
 
   </section>
@@ -40,8 +194,7 @@
     <div class="card">
 
       <p>
-        AI-generated media has made manipulated images increasingly realistic and difficult to detect manually.
-        Deepfakes introduce risks across identity verification, fraud detection, journalism integrity, and digital trust systems.
+        AI-generated media has made manipulated images increasingly realistic and difficult to detect manually, creating risks in identity verification, fraud detection, and digital trust.
       </p>
 
       <p>
@@ -55,14 +208,14 @@
       </ul>
 
       <p class="highlight">
-        The core challenge was building a model that learns forensic signals rather than dataset-specific shortcuts.
+        The core challenge was building a model that learns forensic signals rather than dataset-specific artifacts.
       </p>
 
     </div>
 
   </section>
 
-  <!-- BUILD -->
+  <!-- WHAT I BUILT -->
   <section>
 
     <h2>What I Built</h2>
@@ -70,21 +223,17 @@
     <div class="card">
 
       <p>
-        I built a binary image classification system using EfficientNet-B7 and transfer learning to classify images as real or deepfake.
+        A binary image classification system using EfficientNet-B7 and transfer learning to classify images as real or deepfake.
       </p>
 
       <ul>
-        <li>EfficientNet-B7 pretrained backbone (ImageNet)</li>
-        <li>Custom binary classification head</li>
+        <li>EfficientNet-B7 backbone (ImageNet pretrained)</li>
+        <li>Binary classification head</li>
         <li>PyTorch training pipeline</li>
-        <li>Data preprocessing and augmentation pipeline</li>
-        <li>Model checkpointing and early stopping</li>
-        <li>Evaluation using multiple metrics</li>
+        <li>Data preprocessing and augmentation</li>
+        <li>Checkpointing and early stopping</li>
+        <li>Evaluation metrics (precision, recall, F1, AUROC)</li>
       </ul>
-
-      <p>
-        The system was trained on FaceForensics++ dataset frames and optimized for balanced detection performance.
-      </p>
 
     </div>
 
@@ -103,11 +252,11 @@
         <div class="arrow">→</div>
         <div class="flow-box">Preprocessing & Augmentation</div>
         <div class="arrow">→</div>
-        <div class="flow-box">EfficientNet-B7 Backbone</div>
+        <div class="flow-box">EfficientNet-B7</div>
         <div class="arrow">→</div>
-        <div class="flow-box">Binary Classifier Head</div>
+        <div class="flow-box">Binary Classifier</div>
         <div class="arrow">→</div>
-        <div class="flow-box">Training Pipeline (PyTorch)</div>
+        <div class="flow-box">Training Pipeline</div>
         <div class="arrow">→</div>
         <div class="flow-box">Evaluation Metrics</div>
 
@@ -125,23 +274,14 @@
     <div class="card">
 
       <ol>
-
-        <li>Dataset images are loaded from FaceForensics++ frames.</li>
-
-        <li>Images are resized, normalized, and augmented.</li>
-
-        <li>EfficientNet-B7 pretrained on ImageNet is loaded.</li>
-
-        <li>The classification head is replaced with a binary classifier.</li>
-
-        <li>Model is fine-tuned on deepfake vs real image dataset.</li>
-
-        <li>Training is optimized using early stopping and checkpoints.</li>
-
-        <li>Performance is evaluated using accuracy, precision, recall, F1, and AUROC.</li>
-
-        <li>ROC curves and confusion matrices are generated for analysis.</li>
-
+        <li>Load FaceForensics++ dataset frames.</li>
+        <li>Apply resizing, normalization, and augmentation.</li>
+        <li>Load pretrained EfficientNet-B7 model.</li>
+        <li>Replace classification head with binary classifier.</li>
+        <li>Fine-tune model on real vs deepfake images.</li>
+        <li>Train using PyTorch with early stopping and checkpoints.</li>
+        <li>Evaluate using accuracy, precision, recall, F1, AUROC.</li>
+        <li>Generate ROC curves and confusion matrices.</li>
       </ol>
 
     </div>
@@ -156,23 +296,18 @@
     <div class="card">
 
       <p>
-        The key objective was not just classification accuracy, but generalization.
-        Deepfake detection fails when models learn dataset artifacts instead of forensic patterns.
-      </p>
-
-      <p>
-        To address this, the design focused on:
+        The goal was not just accuracy, but generalization across unseen deepfake distributions.
       </p>
 
       <ul>
-        <li>Transfer learning instead of training from scratch</li>
-        <li>Strong augmentation strategies</li>
+        <li>Transfer learning over training from scratch</li>
+        <li>Strong augmentation to reduce overfitting</li>
         <li>Balanced evaluation metrics over accuracy alone</li>
         <li>Reproducible training pipeline design</li>
       </ul>
 
       <p class="highlight">
-        The guiding question was whether the model could detect manipulation patterns beyond the training dataset.
+        The key question: can the model detect manipulation patterns beyond the dataset it was trained on?
       </p>
 
     </div>
@@ -187,22 +322,21 @@
     <div class="card">
 
       <ul>
-        <li>98.07% classification accuracy on test data</li>
-        <li>High precision-recall balance across classes</li>
-        <li>Robust generalization on unseen validation samples</li>
+        <li>98%+ classification performance</li>
+        <li>Strong precision-recall balance</li>
+        <li>Robust generalization on test data</li>
         <li>End-to-end reproducible ML pipeline</li>
       </ul>
 
       <p>
-        The project demonstrates practical application of computer vision in security-focused forensic analysis,
-        with direct relevance to fraud detection and synthetic media verification systems.
+        Demonstrates practical application of computer vision in cybersecurity-oriented forensic analysis and synthetic media detection.
       </p>
 
     </div>
 
   </section>
 
-  <!-- TECH STACK -->
+  <!-- TECH -->
   <section>
 
     <h2>Tech Stack</h2>
@@ -212,12 +346,11 @@
       <ul>
         <li>Python</li>
         <li>PyTorch</li>
-        <li>Torchvision</li>
         <li>EfficientNet-B7</li>
         <li>Scikit-Learn</li>
         <li>NumPy</li>
         <li>Matplotlib</li>
-        <li>FaceForensics++ Dataset</li>
+        <li>FaceForensics++</li>
       </ul>
 
     </div>
